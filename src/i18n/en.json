@@ -1,0 +1,11 @@
+{
+  "title": "My Portfolio",
+  "nav": {
+    "about": "About",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "footer": {
+    "rights": "All rights reserved."
+  }
+}

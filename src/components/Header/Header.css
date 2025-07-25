@@ -1,0 +1,202 @@
+
+
+.header {
+  width: 100%;
+  background-color: var(--header-bg);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+/* NAVBAR commune */
+.nav {
+  display: none;
+  width: 100%;
+}
+
+.nav.open {
+  display: block;
+  background-color: grey;
+  right: 6rem;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  flex-direction: row;
+}
+
+.nav-list li {
+  cursor: pointer;
+  color: var(--text-color);
+}
+
+.nav-list li:hover {
+  opacity: 0.8;
+}
+
+/* Icônes langue + thème */
+.right-icons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: var(--text-color);
+}
+
+/* Burger icon */
+.burger-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+}
+
+.burger-btn img {
+  width: 100%;
+  height: auto;
+}
+
+/* Container groupé pour nav + icons */
+.nav-container {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.burger-and-icons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Langue */
+.lang-selector {
+  position: relative;
+}
+
+.lang-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.lang-btn img {
+  width: 24px;
+  height: 24px;
+}
+
+.lang-dropdown {
+  position: absolute;
+  right: 0;
+  top: 30px;
+  background-color: var(--dropdown-bg);
+  border: 1px solid var(--dropdown-border);
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem;
+  border-radius: 5px;
+  z-index: 10;
+  color: var(--text-color);
+}
+
+.lang-dropdown li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.3rem;
+  cursor: pointer;
+}
+
+.lang-dropdown li:hover {
+  background-color: var(--dropdown-hover);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .burger-and-icons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: auto;
+    gap: 1rem;
+    position: relative; /* ⚠️ important pour positionner la nav */
+  }
+
+  .burger-btn {
+    position: relative;
+    z-index: 2;
+  }
+
+  .nav {
+    position: absolute;
+    top: 40px; /* ou ajuster selon la hauteur de ton burger */
+    right: 0;
+    background-color: var(--header-bg);
+    border: 1px solid var(--text-color);
+    border-radius: 8px;
+    padding: 1rem;
+    width: max-content;
+    z-index: 1;
+  }
+
+  .nav-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .nav-list li {
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: var(--text-color);
+  }
+
+  .nav-list li:hover {
+    opacity: 0.7;
+  }
+
+  .nav-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .right-icons {
+    display: flex;
+    gap: 1rem;
+  }
+}
